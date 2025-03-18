@@ -1,0 +1,12 @@
+clear, clc
+
+x=0(n) (n>=0).*(9/10).^n;
+n=-5:20;
+stem(n,x(n),'filled'), grid
+%%
+X=@(W, alfa)I./(1-alfa*exp(-1i*w));
+w=linspace(-3*pi,3*pi,1001);
+plot(w,abs(X(w,9/10))),grid
+%%
+X(0,9/10)
+X(p)

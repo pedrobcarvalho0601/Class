@@ -1,0 +1,8 @@
+clc, clear;
+
+val = input('indique o valor, para para ponha zero');
+
+pares = 
+
+while(val!=0)
+    input('indique o valor, para para ponha zero');

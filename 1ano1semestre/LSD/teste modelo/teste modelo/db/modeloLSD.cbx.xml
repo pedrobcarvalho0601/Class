@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="modeloLSD">
+		<CBX_INST_ENTRY INSTANCE_NAME="|controlador2|processor:inst25|lpm_compare2:inst1|lpm_compare:lpm_compare_component" CBX_FILE_NAME="cmpr_9hg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|controlador2|processor:inst25|lpm_counter1:inst2|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_c3i.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

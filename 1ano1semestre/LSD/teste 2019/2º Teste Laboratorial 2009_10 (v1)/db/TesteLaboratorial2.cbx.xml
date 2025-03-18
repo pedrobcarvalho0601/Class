@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="TesteLaboratorial2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Processor|Datapath:inst1|lpm_add_sub0:inst|lpm_add_sub:lpm_add_sub_component" CBX_FILE_NAME="add_sub_snh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

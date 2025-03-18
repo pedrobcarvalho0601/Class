@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.920 ns
+From           : SW[15]
+To             : processor:inst25|lpm_counter1:inst2|lpm_counter:lpm_counter_component|cntr_c3i:auto_generated|safe_q[3]
+From Clock     : --
+To Clock       : clock_50Mhz
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.894 ns
+From           : registo_2b:inst22|Q[0]
+To             : LEDR[1]
+From Clock     : clock_50Mhz
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.997 ns
+From           : h
+To             : registo_2b:inst22|Q[1]
+From Clock     : --
+To Clock       : clock_50Mhz
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock_50Mhz'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 74.19 MHz ( period = 13.479 ns )
+From           : clk_div:inst8|clock_1Hz_int
+To             : clk_div:inst8|clock_1Hz
+From Clock     : clock_50Mhz
+To Clock       : clock_50Mhz
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

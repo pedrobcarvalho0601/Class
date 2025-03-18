@@ -1,0 +1,7 @@
+camisola 20 tem 5 anos
+camisola 30 tem 7 anos
+camisola 15 tem 4 anos
+camisola 34 tem 6 anos
+camisola 3 tem 6 anos
+camisola 26 tem 6 anos
+camisola 4 tem 12 anos

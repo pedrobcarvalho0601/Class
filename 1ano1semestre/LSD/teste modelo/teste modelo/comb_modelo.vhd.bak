@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity comb_modelo is
+port (c,h,t,a,s1,s0: in std_logic;
+ n1,n0,ledg0,ledr0, ledr1, ledr2:out std_logic
+ );
+ end comb_modelo;
+ 
+ architecture behavior of comb_modelo is
+ begin
+ logica:process (c,h,t,a) is
+ begin
+	n1 <= ((not s1 and not s0) and c and not h) or ((not s1 and s0) and t and a) or ((s1 and not s0) and not t) or ((s1 and not s0) and t and a);
+	n0 <= ((not s0 and not s1) and not c and h) or ((not s1 and s0) and not t) or ((not s1 and s0) and t and a) or ((s1 and not s0) and t and a);
+	ledg0 <= not s1 and not s0;
+	legr0 <= not s1 and s0;
+	ledr1 <= s1 and not s0;
+	ledr2 <= s1 and s0;
+	end process logica;
+	end behavior;
+ 

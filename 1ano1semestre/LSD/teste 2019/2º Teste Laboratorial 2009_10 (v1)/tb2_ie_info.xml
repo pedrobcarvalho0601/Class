@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--Created by Liquid XML 2008 (www.liquid-technologies.com) for ALTERA CORPORATION-->
+<ProgramExecution xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<AddressBits>32</AddressBits>
+	<DateInvoked>2013/12/04 22:09:26</DateInvoked>
+	<ElapsedTime>2</ElapsedTime>
+	<IsInternal>false</IsInternal>
+	<Name>quartus_map</Name>
+	<PeakMemoryUsed>0</PeakMemoryUsed>
+	<QuartusUser>
+		<AlteraUserName/>
+		<FAEContactName/>
+		<UserID>622594934275.138264633605424</UserID>
+		<UserName>Ivo Frazão</UserName>
+		<TalkbackStatus>
+			<DateSet/>
+			<TalkbackOn>true</TalkbackOn>
+		</TalkbackStatus>
+	</QuartusUser>
+	<Compilation>
+		<CompileID>622594934275.138619496504916</CompileID>
+		<DeviceFamily>Cyclone II</DeviceFamily>
+		<IncrementalCompilation>FULL_INCREMENTAL_COMPILATION</IncrementalCompilation>
+		<SOPCBuilderProjectID/>
+		<TopLevelEntityName>Processor</TopLevelEntityName>
+	</Compilation>
+	<License>
+		<Edition>Web Edition</Edition>
+		<LicenseHostID/>
+	</License>
+	<SchemaVersion>schema_2008-12-15</SchemaVersion>
+	<ApplicationError>
+		<ErrorMessage>cmp_merge_kpt_db</ErrorMessage>
+		<Line>220</Line>
+		<SourceFile>/quartus/atm/amerge/amerge_kpt_op.cpp</SourceFile>
+		<StackTrace>
+	0x0b4fd9b7: atm_amerge + 0x3d9b7 (amerge_mini_merge + 0x3a5d7)
+	0x000230d5: ccl_cfg_ini + 0x30d5 (?cfg_force_qexe_mode_off@@YIXXZ + 0x1e15)
+	0x0b4fd152: atm_amerge + 0x3d152 (amerge_mini_merge + 0x39d72)
+	0x0b50405d: atm_amerge + 0x4405d (amerge_mini_merge + 0x40c7d)
+	0x0b4c321d: atm_amerge + 0x321d
+	0x775e1fbc: ntdll + 0x51fbc (RtlFreeHeap + 0x7a)
+	0x0b4c33f1: atm_amerge + 0x33f1 (amerge_mini_merge + 0x11)
+	0x00412d94: quartus_map + 0x12d94
+	0x000250d0: ccl_cfg_ini + 0x50d0 (?cfg_write_user_ini_file@@YI_NXZ + 0xbe0)
+	0x001aa128: ccl_mem + 0xa128 (?mem_realloc_wrapper@@YIPAXPAXIPAVMEM_TRACKER_THUNK@@PBD@Z + 0x188)
+	0x004185fa: quartus_map + 0x185fa
+	0x001a5580: ccl_mem + 0x5580 (mem_out_of_memory + 0x4f0)
+	0x001a94f2: ccl_mem + 0x94f2 (?locked_allocate@MEM_SEGMENT_INTERNAL@@AAIPAXPADKKPAVMEM_TRACKER_DATA@@@Z + 0x62)
+	0x00885a66: comp_qcu + 0x5a66 (??4QCU_ACF_SETTING@@QAEAAU0@ABU0@@Z + 0x3366)
+	0x00409d3b: quartus_map + 0x9d3b
+	0x0041ab09: quartus_map + 0x1ab09
+	0x0085ce32: comp_qexe + 0xce32 (?qexe_get_command_line@@YIPBDXZ + 0x3a2)
+	0x008838e3: comp_qcu + 0x38e3 (??4QCU_ACF_SETTING@@QAEAAU0@ABU0@@Z + 0x11e3)
+	0x00887c29: comp_qcu + 0x7c29 (?check_license@QCU_FRAMEWORK@@UAI_NXZ + 0x139)
+	0x0085fbbd: comp_qexe + 0xfbbd (?qexe_process_cmdline_arguments@@YI_NPAVQEXE_CMDLINE@@HPAPBD@Z + 0x34d)
+		</StackTrace>
+		<Subsystem>AMERGE</Subsystem>
+	</ApplicationError>
+	<QuartusInstallation>
+		<InstallationID>622594934275.1382555817002</InstallationID>
+		<Version>
+			<Build>132</Build>
+			<BuildSite>SJ</BuildSite>
+			<BuildSuffix/>
+			<Edition>Web Edition</Edition>
+			<ServicePack>0</ServicePack>
+			<VersionNumber>9</VersionNumber>
+		</Version>
+	</QuartusInstallation>
+	<ProjectRevision>
+		<ProjectName>TesteLaboratorial2</ProjectName>
+		<Revision>TesteLaboratorial2</Revision>
+	</ProjectRevision>
+	<Machine>
+		<CPUCountLogical>2</CPUCountLogical>
+		<CPUCountPhysical>1</CPUCountPhysical>
+		<CPUSpeed>2095</CPUSpeed>
+		<Hostname>Insys</Hostname>
+		<OS>Windows Vista</OS>
+		<OSAddressBits>64</OSAddressBits>
+		<OSVersion>6.2</OSVersion>
+		<Platform>windows</Platform>
+		<ScreenResolution>unknown</ScreenResolution>
+		<TotalPhysicalRAM>4060</TotalPhysicalRAM>
+		<TotalVirtualRAM>35</TotalVirtualRAM>
+		<NIC>
+			<Address>0090f58cc603</Address>
+		</NIC>
+	</Machine>
+</ProgramExecution>
+

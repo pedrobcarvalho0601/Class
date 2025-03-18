@@ -1,0 +1,12 @@
+
+Dados da Pessoa:
+Nome: pedro 
+Sexo: M
+Telemovel: 96
+Nascimento: 6 / 1 / 2004
+
+Dados da Pessoa:
+Nome: barbara 
+Sexo: F
+Telemovel: 92
+Nascimento: 20 / 12 / 2004

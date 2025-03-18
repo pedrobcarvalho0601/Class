@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    float array[20][20];
+    
+    {
+    
+    for(int i=0; i<20; i++){
+        
+        for(int j=0; j<20; j++){
+            printf("coloque um numero real na coluna %d e na linha %d", j, i);
+            scanf(" ")            
+            
+                    
+        }    
+        
+        
+        
+    }
+    
+    
+        return (0);
+}

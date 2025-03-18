@@ -1,0 +1,19 @@
+clc, clear;
+ano_nasc = input('Indique ano em que nasceu: ');
+ano = input('Indique o ano presente: ');
+nome = input('Indique o seu nome: ', 's');
+altura = input('indique a sua altura em metros');
+peso = input('indique o seu peso');
+
+imc = peso/(altura^2);
+
+% disp([nome ', se já celebrou o seu aniversário este ano,']);
+% disp(['então já completou ', num2str(ano - ano_nasc), ' anos.']);
+
+fprintf('%s, se já celebrou o seu aniversário este ano então já completou %d anos \n', nome, ano - ano_nasc);
+fprintf('com um peso de %f0.2 e uma altura %f0.2 o seu IMC é %f0.2', peso, altura, imc);
+
+if(imc<18.5); fprintf('abixo do peso ideal'); end;
+if(imc>18.5 && imc<25.0 ) fprintf('peso ideal'); end;
+if(imc>25 && imc<30 ) fprintf('peso ideal'); end;
+if(imc>18.5 && imc<25.0 ) fprintf('peso ideal'); end;

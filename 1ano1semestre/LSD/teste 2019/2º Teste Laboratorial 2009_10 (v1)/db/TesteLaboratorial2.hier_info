@@ -1,0 +1,277 @@
+|Processor
+HEX0[0] <= dec_7seg:inst2.segment_a
+HEX0[1] <= dec_7seg:inst2.segment_b
+HEX0[2] <= dec_7seg:inst2.segment_c
+HEX0[3] <= dec_7seg:inst2.segment_d
+HEX0[4] <= dec_7seg:inst2.segment_e
+HEX0[5] <= dec_7seg:inst2.segment_f
+HEX0[6] <= dec_7seg:inst2.segment_g
+SW[0] => Controller:inst.b
+SW[1] => Controller:inst.m
+SW[2] => Controller:inst.c
+CLOCK_50 => clk_div:inst4.clock_50Mhz
+HEX1[0] <= dec_7seg:inst3.segment_a
+HEX1[1] <= dec_7seg:inst3.segment_b
+HEX1[2] <= dec_7seg:inst3.segment_c
+HEX1[3] <= dec_7seg:inst3.segment_d
+HEX1[4] <= dec_7seg:inst3.segment_e
+HEX1[5] <= dec_7seg:inst3.segment_f
+HEX1[6] <= dec_7seg:inst3.segment_g
+LEDR[0] <= Controller:inst.dar_b
+LEDR[1] <= Controller:inst.dar_m
+LEDR[2] <= Controller:inst.dar_c
+
+
+|Processor|dec_7seg:inst2
+hex_digit[0] => Mux0.IN19
+hex_digit[0] => Mux1.IN19
+hex_digit[0] => Mux2.IN19
+hex_digit[0] => Mux3.IN19
+hex_digit[0] => Mux4.IN19
+hex_digit[0] => Mux5.IN19
+hex_digit[0] => Mux6.IN19
+hex_digit[1] => Mux0.IN18
+hex_digit[1] => Mux1.IN18
+hex_digit[1] => Mux2.IN18
+hex_digit[1] => Mux3.IN18
+hex_digit[1] => Mux4.IN18
+hex_digit[1] => Mux5.IN18
+hex_digit[1] => Mux6.IN18
+hex_digit[2] => Mux0.IN17
+hex_digit[2] => Mux1.IN17
+hex_digit[2] => Mux2.IN17
+hex_digit[2] => Mux3.IN17
+hex_digit[2] => Mux4.IN17
+hex_digit[2] => Mux5.IN17
+hex_digit[2] => Mux6.IN17
+hex_digit[3] => Mux0.IN16
+hex_digit[3] => Mux1.IN16
+hex_digit[3] => Mux2.IN16
+hex_digit[3] => Mux3.IN16
+hex_digit[3] => Mux4.IN16
+hex_digit[3] => Mux5.IN16
+hex_digit[3] => Mux6.IN16
+segment_a <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+segment_b <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+segment_c <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segment_d <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segment_e <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segment_f <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segment_g <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Processor|Controller:inst
+dar_b <= Controller_comb:inst.dar_b
+s[0] <= lpm_ff0:inst1.q[0]
+s[1] <= lpm_ff0:inst1.q[1]
+clock => lpm_ff0:inst1.clock
+b => Controller_comb:inst.b
+m => Controller_comb:inst.m
+c => Controller_comb:inst.c
+dar_m <= Controller_comb:inst.dar_m
+dar_c <= Controller_comb:inst.dar_c
+
+
+|Processor|Controller:inst|Controller_comb:inst
+s1 => n1.IN0
+s1 => dar_c.IN0
+s1 => n1.IN0
+s1 => n1.IN0
+s0 => n1.IN1
+s0 => dar_c.IN1
+s0 => n1.IN1
+s0 => n1.IN1
+b => n0.IN1
+b => n1.IN1
+m => n1.IN1
+c => n1.IN1
+c => n0.IN1
+n1 <= n1.DB_MAX_OUTPUT_PORT_TYPE
+n0 <= n0.DB_MAX_OUTPUT_PORT_TYPE
+dar_b <= n1.DB_MAX_OUTPUT_PORT_TYPE
+dar_m <= n1.DB_MAX_OUTPUT_PORT_TYPE
+dar_c <= dar_c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Processor|Controller:inst|lpm_ff0:inst1
+clock => lpm_ff:lpm_ff_component.clock
+data[0] => lpm_ff:lpm_ff_component.data[0]
+data[1] => lpm_ff:lpm_ff_component.data[1]
+q[0] <= lpm_ff:lpm_ff_component.q[0]
+q[1] <= lpm_ff:lpm_ff_component.q[1]
+
+
+|Processor|Controller:inst|lpm_ff0:inst1|lpm_ff:lpm_ff_component
+data[0] => dffs[0].DATAIN
+data[1] => dffs[1].DATAIN
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Processor|clk_div:inst4
+clock_50Mhz => clock_1Hz~reg0.CLK
+clock_50Mhz => clock_10Hz~reg0.CLK
+clock_50Mhz => clock_100Hz~reg0.CLK
+clock_50Mhz => clock_1KHz~reg0.CLK
+clock_50Mhz => clock_10KHz~reg0.CLK
+clock_50Mhz => clock_100KHz~reg0.CLK
+clock_50Mhz => clock_1MHz~reg0.CLK
+clock_50Mhz => clock_1Mhz_int.CLK
+clock_50Mhz => count_1Mhz[0].CLK
+clock_50Mhz => count_1Mhz[1].CLK
+clock_50Mhz => count_1Mhz[2].CLK
+clock_50Mhz => count_1Mhz[3].CLK
+clock_50Mhz => count_1Mhz[4].CLK
+clock_50Mhz => count_1Mhz[5].CLK
+clock_1MHz <= clock_1MHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_100KHz <= clock_100KHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_10KHz <= clock_10KHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_1KHz <= clock_1KHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_100Hz <= clock_100Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_10Hz <= clock_10Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock_1Hz <= clock_1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Processor|dec_7seg:inst3
+hex_digit[0] => Mux0.IN19
+hex_digit[0] => Mux1.IN19
+hex_digit[0] => Mux2.IN19
+hex_digit[0] => Mux3.IN19
+hex_digit[0] => Mux4.IN19
+hex_digit[0] => Mux5.IN19
+hex_digit[0] => Mux6.IN19
+hex_digit[1] => Mux0.IN18
+hex_digit[1] => Mux1.IN18
+hex_digit[1] => Mux2.IN18
+hex_digit[1] => Mux3.IN18
+hex_digit[1] => Mux4.IN18
+hex_digit[1] => Mux5.IN18
+hex_digit[1] => Mux6.IN18
+hex_digit[2] => Mux0.IN17
+hex_digit[2] => Mux1.IN17
+hex_digit[2] => Mux2.IN17
+hex_digit[2] => Mux3.IN17
+hex_digit[2] => Mux4.IN17
+hex_digit[2] => Mux5.IN17
+hex_digit[2] => Mux6.IN17
+hex_digit[3] => Mux0.IN16
+hex_digit[3] => Mux1.IN16
+hex_digit[3] => Mux2.IN16
+hex_digit[3] => Mux3.IN16
+hex_digit[3] => Mux4.IN16
+hex_digit[3] => Mux5.IN16
+hex_digit[3] => Mux6.IN16
+segment_a <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+segment_b <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+segment_c <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segment_d <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segment_e <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segment_f <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segment_g <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Processor|Datapath:inst1
+counter[0] <= lpm_ff1:inst1.q[0]
+counter[1] <= lpm_ff1:inst1.q[1]
+counter[2] <= lpm_ff1:inst1.q[2]
+counter[3] <= lpm_ff1:inst1.q[3]
+clock => lpm_ff1:inst1.clock
+enable => lpm_ff1:inst1.enable
+
+
+|Processor|Datapath:inst1|lpm_ff1:inst1
+clock => lpm_ff:lpm_ff_component.clock
+data[0] => lpm_ff:lpm_ff_component.data[0]
+data[1] => lpm_ff:lpm_ff_component.data[1]
+data[2] => lpm_ff:lpm_ff_component.data[2]
+data[3] => lpm_ff:lpm_ff_component.data[3]
+enable => lpm_ff:lpm_ff_component.enable
+q[0] <= lpm_ff:lpm_ff_component.q[0]
+q[1] <= lpm_ff:lpm_ff_component.q[1]
+q[2] <= lpm_ff:lpm_ff_component.q[2]
+q[3] <= lpm_ff:lpm_ff_component.q[3]
+
+
+|Processor|Datapath:inst1|lpm_ff1:inst1|lpm_ff:lpm_ff_component
+data[0] => dffs[0].DATAIN
+data[1] => dffs[1].DATAIN
+data[2] => dffs[2].DATAIN
+data[3] => dffs[3].DATAIN
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Processor|Datapath:inst1|lpm_add_sub0:inst
+dataa[0] => lpm_add_sub:lpm_add_sub_component.dataa[0]
+dataa[1] => lpm_add_sub:lpm_add_sub_component.dataa[1]
+dataa[2] => lpm_add_sub:lpm_add_sub_component.dataa[2]
+dataa[3] => lpm_add_sub:lpm_add_sub_component.dataa[3]
+result[0] <= lpm_add_sub:lpm_add_sub_component.result[0]
+result[1] <= lpm_add_sub:lpm_add_sub_component.result[1]
+result[2] <= lpm_add_sub:lpm_add_sub_component.result[2]
+result[3] <= lpm_add_sub:lpm_add_sub_component.result[3]
+
+
+|Processor|Datapath:inst1|lpm_add_sub0:inst|lpm_add_sub:lpm_add_sub_component
+dataa[0] => add_sub_snh:auto_generated.dataa[0]
+dataa[1] => add_sub_snh:auto_generated.dataa[1]
+dataa[2] => add_sub_snh:auto_generated.dataa[2]
+dataa[3] => add_sub_snh:auto_generated.dataa[3]
+datab[0] => add_sub_snh:auto_generated.datab[0]
+datab[1] => add_sub_snh:auto_generated.datab[1]
+datab[2] => add_sub_snh:auto_generated.datab[2]
+datab[3] => add_sub_snh:auto_generated.datab[3]
+cin => ~NO_FANOUT~
+add_sub => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= add_sub_snh:auto_generated.result[0]
+result[1] <= add_sub_snh:auto_generated.result[1]
+result[2] <= add_sub_snh:auto_generated.result[2]
+result[3] <= add_sub_snh:auto_generated.result[3]
+cout <= <GND>
+overflow <= <GND>
+
+
+|Processor|Datapath:inst1|lpm_add_sub0:inst|lpm_add_sub:lpm_add_sub_component|add_sub_snh:auto_generated
+dataa[0] => op_1.IN6
+dataa[1] => op_1.IN4
+dataa[2] => op_1.IN2
+dataa[3] => op_1.IN0
+datab[0] => op_1.IN7
+datab[1] => op_1.IN5
+datab[2] => op_1.IN3
+datab[3] => op_1.IN1
+result[0] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+
+

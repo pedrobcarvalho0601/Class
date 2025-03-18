@@ -1,0 +1,30 @@
+clc, clear;
+
+val = input('indique o valor, para parar ponha zero ');
+
+if mod(val,2)
+fprintf('\n par \n');
+else 
+    fprintf('\n impar \n');
+end
+
+
+end
+
+% if mod(val,2) ~= 0
+% fprintf('\n impar \n');
+% end
+
+
+while(val > 0)
+
+    input('\n indique o valor, parar para ponha zero ');
+
+    if rem(val,2) == 0
+    fprintf('\n par \n');
+    end
+    
+    % if rem(val,2) ~= 0
+    % fprintf('\n impar \n');
+    % end
+end
