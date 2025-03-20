@@ -2,11 +2,12 @@ close all;
 clc;
 
 % Leitura do arquivo de audio
-[x, fs] = audioread('TIMIT_TRAIN_DR1_MDAC0_SX451.wav');
+fs=10000; n=0:10000;
+x=-sin(pi/4*n+fs/3*cos(2*pi/fs*n-2));
 %soundsc(x,fs);
 
 % Definir parametros da analise
-N = 640;       % Tamanho da trama (40ms)
+N = 180;       % Tamanho da trama (40ms)
 L = 160;       % Avanço entre tramas (10ms)
 NFFT = 1024;   % Tamanho da DFT
 
