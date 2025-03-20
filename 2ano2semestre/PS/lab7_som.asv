@@ -1,0 +1,27 @@
+[x, fs] = audioread('TIMIT_TRAIN_DR1_MDAC0_SX451.wav');
+soundsc(x,fs)
+
+N = 640;       % Tamanho da trama
+L = 160;       % Avanço (hop size)
+NFFT = 1024;   % Tamanho da DFT
+
+% Criar matriz de tramas
+xf = buffer(x, N, overlap, 'nodelay');
+nTramas = size(xf, 2); % Número de tramas
+
+% Calcular a FFT de cada trama
+X = fft(xf, NFFT);
+X_dB = 20 * log10(abs(X(1:NFFT/2, :))); % Apenas metade do espectro
+
+% Definir eixos para o sonograma
+t = (0:nTramas-1) * (L/fs);
+f = (0:NFFT/2-1) * (fs/NFFT);
+
+% Plot do sonograma
+figure;
+imagesc(t, f, X_dB);
+axis xy;
+xlabel('Tempo (s)');
+ylabel('Frequência (Hz)');
+title('Sonograma do Sinal');
+colorbar;

@@ -4,7 +4,7 @@ syms x;
 f = @(x) exp(2*x/3) - 2*x;
 
 % Intervalo e tolerância
-a = 0;
+a = -4;
 b = 4;
 tol = 1e-4; 
 kmax = 20;
@@ -15,7 +15,7 @@ function c = bisection(f, a, b, tol, kmax)
     if nargin < 4 || isempty(tol), tol = 1e-4; end
 
     if f(a) * f(b) > 0
-        error("Não há solução no intervalo [a, b]");
+        error('Não há solução no intervalo [a, b]');
     end
 
     for k = 1:kmax
@@ -36,3 +36,7 @@ function c = bisection(f, a, b, tol, kmax)
         end
     end
 end
+
+% Chamando a função e exibindo o resultado
+raiz = bisection(f, a, b, tol, kmax);
+fprintf("A raiz aproximada é: %.6f\n", raiz);
